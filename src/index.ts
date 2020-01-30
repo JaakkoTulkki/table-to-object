@@ -1,0 +1,1 @@
+export {transform} from './table-to-object';

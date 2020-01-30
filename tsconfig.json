@@ -18,7 +18,8 @@
   "exclude": [
     "node_modules",
     "dist",
-    "build"
+    "build",
+    "src/**/*.test.ts"
   ],
   "include": [
     "./src/**/*"
