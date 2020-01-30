@@ -4,7 +4,7 @@ let columnSeparatorRegex = /( +)?\|-+\|/;
 type funk = (...args: any[]) => void;
 
 type Value = string | number | funk | any;
-type Row = Value[]
+export type Row = Value[]
 
 export function getAllRows(strs, ...js): Row[] {
   let strings: string[] = [...strs];
@@ -52,7 +52,7 @@ export function getAllRows(strs, ...js): Row[] {
     }
   }
 
-  return collector.map(row => {
+  const finalTable = collector.map(row => {
     return row.map(item => {
       if (typeof item === 'string') {
         let s = item.trim();
@@ -61,4 +61,8 @@ export function getAllRows(strs, ...js): Row[] {
       return item;
     })
   });
+  if(finalTable.length < 2) {
+    throw new Error('Not correctly formatted table.');
+  }
+  return finalTable;
 }

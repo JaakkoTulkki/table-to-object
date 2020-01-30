@@ -106,7 +106,17 @@ describe('TableTransformer', function () {
             ['hello', 4, undefined, 'there'],
             ['e', undefined, undefined, 'there'],
         ]);
+    });
 
+    it('should throw an Error if the table is not correctly formatted', function () {
+        const make = () => getAllRows`|blaa|`;
+        expect(make).toThrow('Not correctly formatted table.');
+    });
 
+    it('should throw an error if columns and row lengths don\'t mactch', function () {
+        const make = () => getAllRows`
+        |one|two|
+        | 1 `;
+        expect(make).toThrow('Not correctly formatted table.');
     });
 });
