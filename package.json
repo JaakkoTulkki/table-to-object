@@ -14,11 +14,13 @@
   },
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.1",
     "jest": "^25.1.0",
     "ts-jest": "^25.1.0",
-    "tslib": "^1.10.0",
     "typescript": "^3.7.5"
   }
 }
